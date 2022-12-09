@@ -1,5 +1,5 @@
 async function getUsers() {
-    var res = await axios.get("http://localhost:8080/api/users");
+    var res = await axios.get("https://cs20-project.herokuapp.com/api/users");
     var users = res.data;
     for (var i = 0; i < users.length; i++) {
         document.getElementById("users-container").innerHTML +=

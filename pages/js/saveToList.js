@@ -8,7 +8,7 @@ async function saveToList(anime_id, route, list_name) {
     anime_id: anime_id,
   }
 
-  const res = await axios.put(`http://localhost:8080/api/user/${route}/${user.username}`, data)
+  const res = await axios.put(`https://cs20-project.herokuapp.com/api/user/${route}/${user.username}`, data)
   if (res.data.message != null) {
     document.getElementById(`error`).innerHTML = "Already in " + list_name + " list."
     document.getElementById(`error`).style.color = "red";

@@ -12,7 +12,7 @@ async function registerUser() {
     email: email,
     password: password,
   };
-  const res = await axios.post("http://localhost:8080/api/auth/signup", user);
+  const res = await axios.post("https://cs20-project.herokuapp.com/api/auth/signup", user);
   console.log(res.data);
   window.location = "./login.html";
 }
@@ -78,7 +78,7 @@ async function validateUsername(val) {
     return false;
   } else {
     var result = await axios.get(
-      `http://localhost:8080/api/checkUsername/${val}`
+      `https://cs20-project.herokuapp.com/api/checkUsername/${val}`
     );
     var valid = false;
     console.log(val);
@@ -119,7 +119,7 @@ async function validateEmail(val) {
   if (val.length == 0) {
     return false;
   } else {
-    var result = await axios.get(`http://localhost:8080/api/checkEmail/${val}`);
+    var result = await axios.get(`https://cs20-project.herokuapp.com/api/checkEmail/${val}`);
     var valid = false;
     console.log(val);
     console.log(result);

@@ -5,7 +5,7 @@ async function getCurrentUserData() {
     } else {
         document.getElementById("profile-username").innerHTML = user.username;
         const res = await axios.get(
-            `http://localhost:8080/api/user/${user.username}`
+            `https://cs20-project.herokuapp.com/api/user/${user.username}`
         );
         document.getElementById("profile-pic").src = `./assets/profile-pics/profile-pic-${res.data.profile_pic}.png`
         displayAboutMe(res.data.about);
@@ -37,7 +37,7 @@ async function submitEditAbout() {
         updated_about: updated_about,
     };
     const res = await axios.put(
-        `http://localhost:8080/api/user/updateAbout/${user.username}`,
+        `https://cs20-project.herokuapp.com/api/user/updateAbout/${user.username}`,
         data
     );
     document.location = "./profile.html"
@@ -61,7 +61,7 @@ async function submitEditProfilePic(profile_pic) {
         profile_pic: profile_pic,
     }
     const res = await axios.put(
-        `http://localhost:8080/api/user/updateProfilePic/${user.username}`,
+        `https://cs20-project.herokuapp.com/api/user/updateProfilePic/${user.username}`,
         data
     );
     document.location = "./profile.html";
@@ -272,7 +272,7 @@ async function removeFromList(anime_id, route) {
     };
 
     const res = await axios.put(
-        `http://localhost:8080/api/user/${route}/${user.username}`,
+        `https://cs20-project.herokuapp.com/api/user/${route}/${user.username}`,
         data
     );
     if (res.data.message != null) {

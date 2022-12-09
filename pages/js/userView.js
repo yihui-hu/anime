@@ -5,7 +5,7 @@ async function getCurrentUserData() {
     } else {
         document.getElementById("profile-username").innerHTML = user;
         const res = await axios.get(
-            `http://localhost:8080/api/user/${user}`
+            `https://cs20-project.herokuapp.com/api/user/${user}`
         );
         document.getElementById("profile-pic").src = `./assets/profile-pics/profile-pic-${res.data.profile_pic}.png`
         displayAboutMe(res.data.about);
