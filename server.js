@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './pages')))
+// app.use(express.static(path.join(__dirname, './pages')))
 
 // bypass annoying CORS errors
 app.use(function(req, res, next) {
