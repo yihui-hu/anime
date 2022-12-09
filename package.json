@@ -13,8 +13,8 @@
     "jquery-validation": "^1.19.5",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.4",
-    "passport": "^0.6.0",
     "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
     "passport-local-mongoose": "^7.1.2"
   },
   "scripts": {
