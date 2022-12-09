@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv").config();
+const path = require('path');
 
 const app = express();
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, './pages')))
 
 // bypass annoying CORS errors
 app.use(function(req, res, next) {
@@ -14,7 +16,6 @@ app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
   next();
 });
-
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -54,6 +55,10 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/./pages/home.html'))
+})
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
