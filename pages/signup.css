@@ -45,7 +45,7 @@
 }
 
 .bg-image {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('../pages/assets/signup.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./assets/signup.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
