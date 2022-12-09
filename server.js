@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './pages')))
+app.use(express.static(path.join(__dirname, 'pages')));
 
 // bypass annoying CORS errors
 app.use(function(req, res, next) {
@@ -50,9 +50,9 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + './pages/home.html'))
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/./pages/home.html'))
+// })
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
