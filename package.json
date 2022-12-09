@@ -20,7 +20,7 @@
   "scripts": {
     "start": "npm install && node server.js",
     "dev": "nodemon server.js",
-    "heroku-postbuild": "npm install && nodemon server.js"
+    "heroku-postbuild": "npm install"
   },
   "name": "anime",
   "description": "",
