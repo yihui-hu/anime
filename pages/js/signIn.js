@@ -27,7 +27,7 @@ async function signInUser() {
       collection[i].innerHTML = "";
     }
     const res = await axios
-      .post("http://localhost:8080/api/auth/signin", user)
+      .post("https://cs20-project.herokuapp.com/api/auth/signin", user)
       .catch((err) => {
         statusCode = err.response.status;
         console.log(statusCode);
