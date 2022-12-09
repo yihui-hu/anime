@@ -284,5 +284,5 @@ async function removeFromList(anime_id, route) {
 
 function signOutUser() {
     localStorage.removeItem("user");
-    window.location = "./home.html";
+    window.location = "./index.html";
 }
