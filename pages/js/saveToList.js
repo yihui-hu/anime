@@ -1,7 +1,7 @@
 async function saveToList(anime_id, route, list_name) {
   var user = JSON.parse(localStorage.getItem('user'));
   if (user == null) {
-    window.location = "../pages/login.html";
+    window.location = "./login.html";
   }
 
   var data = {
